@@ -11,6 +11,9 @@ import FirebaseAuth
 import GoogleSignIn
 
 class CreateAccount: UIViewController {
+    
+    //create unbound seque to DesignVC Account
+    var DesignVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DesignVC")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,4 +25,7 @@ class CreateAccount: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func SubmitButton(_ sender: UIButton) {
+        self.present(DesignVC, animated: true, completion: nil)
+    }
 }

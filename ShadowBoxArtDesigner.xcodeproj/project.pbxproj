@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8113A44F1E94E85D00CD5D20 /* 3D_FourLayered_Flower_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4431E94E85D00CD5D20 /* 3D_FourLayered_Flower_Small.png */; };
+		8113A4521E94E85D00CD5D20 /* 3D_MultiLayered_Flower_Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4461E94E85D00CD5D20 /* 3D_MultiLayered_Flower_Large.png */; };
+		8113A4551E94E85D00CD5D20 /* 3D_Pet_Bud.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4491E94E85D00CD5D20 /* 3D_Pet_Bud.png */; };
+		8113A4581E94E85D00CD5D20 /* 3D_ThreeLayered_Flower_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A44C1E94E85D00CD5D20 /* 3D_ThreeLayered_Flower_Small.png */; };
+		8113A45E1E94E96700CD5D20 /* Flat_LargeButterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A45B1E94E96700CD5D20 /* Flat_LargeButterfly.png */; };
+		8113A4621E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4611E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png */; };
+		8113A4641E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4631E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png */; };
+		813F6A9F1E95EF81005E040E /* Extra_Pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A961E95EF81005E040E /* Extra_Pattern.png */; };
+		813F6AA01E95EF81005E040E /* Extras_CutOut_Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A971E95EF81005E040E /* Extras_CutOut_Flower.png */; };
+		813F6AA11E95EF81005E040E /* Extras_Large_Feather.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A981E95EF81005E040E /* Extras_Large_Feather.png */; };
+		813F6AA21E95EF81005E040E /* Extras_Smaller_Feather.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A991E95EF81005E040E /* Extras_Smaller_Feather.png */; };
+		813F6AA31E95EF81005E040E /* Flat_SixStar_Large_Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A9A1E95EF81005E040E /* Flat_SixStar_Large_Flower.png */; };
+		813F6AA41E95EF81005E040E /* Flat_SixStar_Small_Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A9B1E95EF81005E040E /* Flat_SixStar_Small_Flower.png */; };
+		813F6AA51E95EF81005E040E /* Flat_Small_Single_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A9C1E95EF81005E040E /* Flat_Small_Single_Leaf.png */; };
+		813F6AA61E95EF81005E040E /* Flat_Standard_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A9D1E95EF81005E040E /* Flat_Standard_Leaf.png */; };
+		813F6AA71E95EF81005E040E /* Single_Small_Pet_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A9E1E95EF81005E040E /* Single_Small_Pet_Leaf.png */; };
 		815C318E1E904F4900DFD769 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C318D1E904F4900DFD769 /* MainMenu.swift */; };
 		815C31901E90504100DFD769 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C318F1E90504100DFD769 /* CreateAccount.swift */; };
 		815C31941E906B7D00DFD769 /* 3D_Pet_Bud.png in Resources */ = {isa = PBXBuildFile; fileRef = 815C31911E906B7D00DFD769 /* 3D_Pet_Bud.png */; };
@@ -18,12 +34,31 @@
 		815C31A61E906C2F00DFD769 /* Rectangle 115.png in Resources */ = {isa = PBXBuildFile; fileRef = 815C31A31E906C2F00DFD769 /* Rectangle 115.png */; };
 		815C31A71E906C2F00DFD769 /* Rectangle 115@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 815C31A41E906C2F00DFD769 /* Rectangle 115@2x.png */; };
 		815C31A81E906C2F00DFD769 /* Rectangle 115@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 815C31A51E906C2F00DFD769 /* Rectangle 115@3x.png */; };
+		817067211E90CF8100602343 /* ButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 817067201E90CF8100602343 /* ButtonBackground.png */; };
+		81716E981E9464900021F129 /* SelectedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 81716E971E9464900021F129 /* SelectedButton.png */; };
+		817BA5011E92115600924099 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BA4FE1E92115600924099 /* AKPickerView.swift */; };
+		817BA5021E92115600924099 /* buttons in Resources */ = {isa = PBXBuildFile; fileRef = 817BA4FF1E92115600924099 /* buttons */; };
+		817BA5031E92115600924099 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BA5001E92115600924099 /* UIImage+Resize.swift */; };
+		817BA50C1E92251100924099 /* Flat_SingleLayer_Small_Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5061E92251100924099 /* Flat_SingleLayer_Small_Flower.png */; };
+		817BA50D1E92251100924099 /* Flat_SingleLayer_VerySmall_Crystal_Bud.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5071E92251100924099 /* Flat_SingleLayer_VerySmall_Crystal_Bud.png */; };
+		817BA50E1E92251100924099 /* Flat_ThreeLayers_vinedBud.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5081E92251100924099 /* Flat_ThreeLayers_vinedBud.png */; };
+		817BA50F1E92251100924099 /* Flat_ThreeLayers.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5091E92251100924099 /* Flat_ThreeLayers.png */; };
+		817BA5101E92251100924099 /* Flat_TwoLayeredBud.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA50A1E92251100924099 /* Flat_TwoLayeredBud.png */; };
+		817BA5111E92251100924099 /* Flat_TwoLeaf_Bud.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA50B1E92251100924099 /* Flat_TwoLeaf_Bud.png */; };
+		817BA5131E9227EB00924099 /* Rectangle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5121E9227EB00924099 /* Rectangle 2.png */; };
+		817BA5151E92287700924099 /* Rectangle 73.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5141E92287700924099 /* Rectangle 73.png */; };
+		817BA5181E922E0A00924099 /* nextBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5161E922E0A00924099 /* nextBT.png */; };
+		817BA5191E922E0A00924099 /* prevBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5171E922E0A00924099 /* prevBT.png */; };
+		8184214C1E9442BA00AA44F2 /* Flat_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 818421491E9442BA00AA44F2 /* Flat_Leaf.png */; };
+		8184214D1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8184214A1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf.png */; };
+		8184214E1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8184214B1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf2.png */; };
 		81A092B41E8E2FAC00773220 /* 3DSBADesignerViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A092B31E8E2FAC00773220 /* 3DSBADesignerViewC.swift */; };
 		81A092B61E8E322900773220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81A092B51E8E322900773220 /* GoogleService-Info.plist */; };
 		81AE39151E8E2A2D001508AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE39141E8E2A2D001508AE /* AppDelegate.swift */; };
 		81AE391A1E8E2A2D001508AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AE39181E8E2A2D001508AE /* Main.storyboard */; };
 		81AE391C1E8E2A2D001508AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AE391B1E8E2A2D001508AE /* Assets.xcassets */; };
 		81AE391F1E8E2A2D001508AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AE391D1E8E2A2D001508AE /* LaunchScreen.storyboard */; };
+		81E1FCAC1E949E1000E40599 /* Rectangle 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E1FCAB1E949E1000E40599 /* Rectangle 114.png */; };
 		81E7C01D1E8F63D300149FEB /* ColorCard in Resources */ = {isa = PBXBuildFile; fileRef = 81E7C0151E8F63D300149FEB /* ColorCard */; };
 		81E7C01E1E8F63D300149FEB /* ColorPaper in Resources */ = {isa = PBXBuildFile; fileRef = 81E7C0161E8F63D300149FEB /* ColorPaper */; };
 		81E7C01F1E8F63D300149FEB /* Design in Resources */ = {isa = PBXBuildFile; fileRef = 81E7C0171E8F63D300149FEB /* Design */; };
@@ -37,6 +72,22 @@
 
 /* Begin PBXFileReference section */
 		6E077994815EA6A5A4FEE06A /* Pods-ShadowBoxArtDesigner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowBoxArtDesigner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowBoxArtDesigner/Pods-ShadowBoxArtDesigner.debug.xcconfig"; sourceTree = "<group>"; };
+		8113A4431E94E85D00CD5D20 /* 3D_FourLayered_Flower_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3D_FourLayered_Flower_Small.png; sourceTree = "<group>"; };
+		8113A4461E94E85D00CD5D20 /* 3D_MultiLayered_Flower_Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3D_MultiLayered_Flower_Large.png; sourceTree = "<group>"; };
+		8113A4491E94E85D00CD5D20 /* 3D_Pet_Bud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3D_Pet_Bud.png; sourceTree = "<group>"; };
+		8113A44C1E94E85D00CD5D20 /* 3D_ThreeLayered_Flower_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3D_ThreeLayered_Flower_Small.png; sourceTree = "<group>"; };
+		8113A45B1E94E96700CD5D20 /* Flat_LargeButterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_LargeButterfly.png; sourceTree = "<group>"; };
+		8113A4611E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_ThreeLayer_Small_Flower.png; sourceTree = "<group>"; };
+		8113A4631E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_SingleLeaf_CentreCutout_Leaf.png; sourceTree = "<group>"; };
+		813F6A961E95EF81005E040E /* Extra_Pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Extra_Pattern.png; sourceTree = "<group>"; };
+		813F6A971E95EF81005E040E /* Extras_CutOut_Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Extras_CutOut_Flower.png; sourceTree = "<group>"; };
+		813F6A981E95EF81005E040E /* Extras_Large_Feather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Extras_Large_Feather.png; sourceTree = "<group>"; };
+		813F6A991E95EF81005E040E /* Extras_Smaller_Feather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Extras_Smaller_Feather.png; sourceTree = "<group>"; };
+		813F6A9A1E95EF81005E040E /* Flat_SixStar_Large_Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_SixStar_Large_Flower.png; sourceTree = "<group>"; };
+		813F6A9B1E95EF81005E040E /* Flat_SixStar_Small_Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_SixStar_Small_Flower.png; sourceTree = "<group>"; };
+		813F6A9C1E95EF81005E040E /* Flat_Small_Single_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_Small_Single_Leaf.png; sourceTree = "<group>"; };
+		813F6A9D1E95EF81005E040E /* Flat_Standard_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_Standard_Leaf.png; sourceTree = "<group>"; };
+		813F6A9E1E95EF81005E040E /* Single_Small_Pet_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Single_Small_Pet_Leaf.png; sourceTree = "<group>"; };
 		815C318D1E904F4900DFD769 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		815C318F1E90504100DFD769 /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		815C31911E906B7D00DFD769 /* 3D_Pet_Bud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3D_Pet_Bud.png; path = MainPage/3D_Pet_Bud.png; sourceTree = "<group>"; };
@@ -48,8 +99,26 @@
 		815C31A31E906C2F00DFD769 /* Rectangle 115.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle 115.png"; path = "MainPage/Rectangle 115.png"; sourceTree = "<group>"; };
 		815C31A41E906C2F00DFD769 /* Rectangle 115@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle 115@2x.png"; path = "MainPage/Rectangle 115@2x.png"; sourceTree = "<group>"; };
 		815C31A51E906C2F00DFD769 /* Rectangle 115@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle 115@3x.png"; path = "MainPage/Rectangle 115@3x.png"; sourceTree = "<group>"; };
+		817067201E90CF8100602343 /* ButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBackground.png; sourceTree = "<group>"; };
 		8170ABC71E8F359500A84E9F /* ShadowBoxArtDesigner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShadowBoxArtDesigner.entitlements; sourceTree = "<group>"; };
 		8170ABC81E8F36C500A84E9F /* ShadowBoxArtDesigner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShadowBoxArtDesigner-Bridging-Header.h"; sourceTree = "<group>"; };
+		81716E971E9464900021F129 /* SelectedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectedButton.png; sourceTree = "<group>"; };
+		817BA4FE1E92115600924099 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
+		817BA4FF1E92115600924099 /* buttons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = buttons; sourceTree = "<group>"; };
+		817BA5001E92115600924099 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		817BA5061E92251100924099 /* Flat_SingleLayer_Small_Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_SingleLayer_Small_Flower.png; path = Design/Flat_SingleLayer_Small_Flower.png; sourceTree = "<group>"; };
+		817BA5071E92251100924099 /* Flat_SingleLayer_VerySmall_Crystal_Bud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_SingleLayer_VerySmall_Crystal_Bud.png; path = Design/Flat_SingleLayer_VerySmall_Crystal_Bud.png; sourceTree = "<group>"; };
+		817BA5081E92251100924099 /* Flat_ThreeLayers_vinedBud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_ThreeLayers_vinedBud.png; path = Design/Flat_ThreeLayers_vinedBud.png; sourceTree = "<group>"; };
+		817BA5091E92251100924099 /* Flat_ThreeLayers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_ThreeLayers.png; path = Design/Flat_ThreeLayers.png; sourceTree = "<group>"; };
+		817BA50A1E92251100924099 /* Flat_TwoLayeredBud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_TwoLayeredBud.png; path = Design/Flat_TwoLayeredBud.png; sourceTree = "<group>"; };
+		817BA50B1E92251100924099 /* Flat_TwoLeaf_Bud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_TwoLeaf_Bud.png; path = Design/Flat_TwoLeaf_Bud.png; sourceTree = "<group>"; };
+		817BA5121E9227EB00924099 /* Rectangle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle 2.png"; path = "Design/Rectangle 2.png"; sourceTree = "<group>"; };
+		817BA5141E92287700924099 /* Rectangle 73.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle 73.png"; path = "Design_List_Menu/Rectangle 73.png"; sourceTree = "<group>"; };
+		817BA5161E922E0A00924099 /* nextBT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextBT.png; path = buttons/nextBT.png; sourceTree = "<group>"; };
+		817BA5171E922E0A00924099 /* prevBT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prevBT.png; path = buttons/prevBT.png; sourceTree = "<group>"; };
+		818421491E9442BA00AA44F2 /* Flat_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_Leaf.png; path = Design_List_Leaves/Flat_Leaf.png; sourceTree = "<group>"; };
+		8184214A1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_SevenLeaf_Leaf.png; path = Design_List_Leaves/Flat_SevenLeaf_Leaf.png; sourceTree = "<group>"; };
+		8184214B1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_SevenLeaf_Leaf2.png; path = Design_List_Leaves/Flat_SevenLeaf_Leaf2.png; sourceTree = "<group>"; };
 		81A092B31E8E2FAC00773220 /* 3DSBADesignerViewC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DSBADesignerViewC.swift; sourceTree = "<group>"; };
 		81A092B51E8E322900773220 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AE39111E8E2A2D001508AE /* ShadowBoxArtDesigner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShadowBoxArtDesigner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +127,7 @@
 		81AE391B1E8E2A2D001508AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81AE391E1E8E2A2D001508AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81AE39201E8E2A2D001508AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81E1FCAB1E949E1000E40599 /* Rectangle 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle 114.png"; path = "MainPage/Rectangle 114.png"; sourceTree = "<group>"; };
 		81E7C0151E8F63D300149FEB /* ColorCard */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ColorCard; sourceTree = "<group>"; };
 		81E7C0161E8F63D300149FEB /* ColorPaper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ColorPaper; sourceTree = "<group>"; };
 		81E7C0171E8F63D300149FEB /* Design */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Design; sourceTree = "<group>"; };
@@ -82,19 +152,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		817BA4FD1E920FEC00924099 /* AVPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				817BA4FE1E92115600924099 /* AKPickerView.swift */,
+				817BA4FF1E92115600924099 /* buttons */,
+				817BA5001E92115600924099 /* UIImage+Resize.swift */,
+			);
+			name = AVPickerView;
+			sourceTree = "<group>";
+		};
 		81A092B71E8E3AE500773220 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				81AE391B1E8E2A2D001508AE /* Assets.xcassets */,
+				817BA5161E922E0A00924099 /* nextBT.png */,
+				817BA5171E922E0A00924099 /* prevBT.png */,
+				817BA5121E9227EB00924099 /* Rectangle 2.png */,
+				817067201E90CF8100602343 /* ButtonBackground.png */,
 				815C319D1E906C0300DFD769 /* Rectangle 113.png */,
 				815C319E1E906C0300DFD769 /* Rectangle 113@2x.png */,
 				815C319F1E906C0300DFD769 /* Rectangle 113@3x.png */,
 				815C31911E906B7D00DFD769 /* 3D_Pet_Bud.png */,
 				815C31921E906B7D00DFD769 /* 3D_Pet_Bud@2x.png */,
+				817BA5141E92287700924099 /* Rectangle 73.png */,
 				815C31931E906B7D00DFD769 /* 3D_Pet_Bud@3x.png */,
 				815C31A31E906C2F00DFD769 /* Rectangle 115.png */,
 				815C31A41E906C2F00DFD769 /* Rectangle 115@2x.png */,
 				815C31A51E906C2F00DFD769 /* Rectangle 115@3x.png */,
-				81AE391B1E8E2A2D001508AE /* Assets.xcassets */,
+				817BA5061E92251100924099 /* Flat_SingleLayer_Small_Flower.png */,
+				817BA5071E92251100924099 /* Flat_SingleLayer_VerySmall_Crystal_Bud.png */,
+				817BA5081E92251100924099 /* Flat_ThreeLayers_vinedBud.png */,
+				817BA5091E92251100924099 /* Flat_ThreeLayers.png */,
+				817BA50A1E92251100924099 /* Flat_TwoLayeredBud.png */,
+				817BA50B1E92251100924099 /* Flat_TwoLeaf_Bud.png */,
+				818421491E9442BA00AA44F2 /* Flat_Leaf.png */,
+				8184214B1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf2.png */,
+				8184214A1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf.png */,
+				8113A4631E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png */,
+				81716E971E9464900021F129 /* SelectedButton.png */,
+				81E1FCAB1E949E1000E40599 /* Rectangle 114.png */,
+				8113A45B1E94E96700CD5D20 /* Flat_LargeButterfly.png */,
+				8113A4431E94E85D00CD5D20 /* 3D_FourLayered_Flower_Small.png */,
+				8113A4461E94E85D00CD5D20 /* 3D_MultiLayered_Flower_Large.png */,
+				8113A4491E94E85D00CD5D20 /* 3D_Pet_Bud.png */,
+				8113A44C1E94E85D00CD5D20 /* 3D_ThreeLayered_Flower_Small.png */,
+				8113A4611E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png */,
+				813F6A961E95EF81005E040E /* Extra_Pattern.png */,
+				813F6A971E95EF81005E040E /* Extras_CutOut_Flower.png */,
+				813F6A981E95EF81005E040E /* Extras_Large_Feather.png */,
+				813F6A991E95EF81005E040E /* Extras_Smaller_Feather.png */,
+				813F6A9A1E95EF81005E040E /* Flat_SixStar_Large_Flower.png */,
+				813F6A9B1E95EF81005E040E /* Flat_SixStar_Small_Flower.png */,
+				813F6A9C1E95EF81005E040E /* Flat_Small_Single_Leaf.png */,
+				813F6A9D1E95EF81005E040E /* Flat_Standard_Leaf.png */,
+				813F6A9E1E95EF81005E040E /* Single_Small_Pet_Leaf.png */,
 				81E7C0151E8F63D300149FEB /* ColorCard */,
 				81E7C0161E8F63D300149FEB /* ColorPaper */,
 				81E7C0171E8F63D300149FEB /* Design */,
@@ -128,6 +240,7 @@
 		81AE39131E8E2A2D001508AE /* ShadowBoxArtDesigner */ = {
 			isa = PBXGroup;
 			children = (
+				817BA4FD1E920FEC00924099 /* AVPickerView */,
 				8170ABC71E8F359500A84E9F /* ShadowBoxArtDesigner.entitlements */,
 				81A092B71E8E3AE500773220 /* Assets */,
 				81A092B31E8E2FAC00773220 /* 3DSBADesignerViewC.swift */,
@@ -229,26 +342,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813F6AA31E95EF81005E040E /* Flat_SixStar_Large_Flower.png in Resources */,
+				8113A4521E94E85D00CD5D20 /* 3D_MultiLayered_Flower_Large.png in Resources */,
+				8184214D1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf.png in Resources */,
 				81E7C01F1E8F63D300149FEB /* Design in Resources */,
 				81E7C0211E8F63D300149FEB /* Design_List_Leaves in Resources */,
+				813F6AA61E95EF81005E040E /* Flat_Standard_Leaf.png in Resources */,
+				8113A4621E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png in Resources */,
+				8113A4641E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png in Resources */,
 				81E7C0241E8F63D300149FEB /* MainPage in Resources */,
+				817BA5191E922E0A00924099 /* prevBT.png in Resources */,
+				81716E981E9464900021F129 /* SelectedButton.png in Resources */,
+				817067211E90CF8100602343 /* ButtonBackground.png in Resources */,
 				815C31961E906B7D00DFD769 /* 3D_Pet_Bud@3x.png in Resources */,
+				813F6AA71E95EF81005E040E /* Single_Small_Pet_Leaf.png in Resources */,
 				81AE391F1E8E2A2D001508AE /* LaunchScreen.storyboard in Resources */,
+				817BA5101E92251100924099 /* Flat_TwoLayeredBud.png in Resources */,
+				813F6AA01E95EF81005E040E /* Extras_CutOut_Flower.png in Resources */,
 				81A092B61E8E322900773220 /* GoogleService-Info.plist in Resources */,
+				817BA5021E92115600924099 /* buttons in Resources */,
 				815C31A11E906C0300DFD769 /* Rectangle 113@2x.png in Resources */,
+				817BA50F1E92251100924099 /* Flat_ThreeLayers.png in Resources */,
+				8184214C1E9442BA00AA44F2 /* Flat_Leaf.png in Resources */,
+				813F6AA51E95EF81005E040E /* Flat_Small_Single_Leaf.png in Resources */,
 				815C31A21E906C0300DFD769 /* Rectangle 113@3x.png in Resources */,
 				81E7C0231E8F63D300149FEB /* Design_Picker_Flat_Flower in Resources */,
 				815C31941E906B7D00DFD769 /* 3D_Pet_Bud.png in Resources */,
 				81E7C0201E8F63D300149FEB /* Design_Canvas_Menu in Resources */,
+				817BA50C1E92251100924099 /* Flat_SingleLayer_Small_Flower.png in Resources */,
+				8184214E1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf2.png in Resources */,
+				817BA50D1E92251100924099 /* Flat_SingleLayer_VerySmall_Crystal_Bud.png in Resources */,
+				813F6AA11E95EF81005E040E /* Extras_Large_Feather.png in Resources */,
 				81E7C0221E8F63D300149FEB /* Design_List_Menu in Resources */,
+				817BA5181E922E0A00924099 /* nextBT.png in Resources */,
 				815C31A61E906C2F00DFD769 /* Rectangle 115.png in Resources */,
+				81E1FCAC1E949E1000E40599 /* Rectangle 114.png in Resources */,
 				815C31A71E906C2F00DFD769 /* Rectangle 115@2x.png in Resources */,
 				81AE391C1E8E2A2D001508AE /* Assets.xcassets in Resources */,
+				817BA5131E9227EB00924099 /* Rectangle 2.png in Resources */,
+				817BA5111E92251100924099 /* Flat_TwoLeaf_Bud.png in Resources */,
+				8113A4551E94E85D00CD5D20 /* 3D_Pet_Bud.png in Resources */,
+				8113A4581E94E85D00CD5D20 /* 3D_ThreeLayered_Flower_Small.png in Resources */,
 				81E7C01E1E8F63D300149FEB /* ColorPaper in Resources */,
 				81E7C01D1E8F63D300149FEB /* ColorCard in Resources */,
+				817BA5151E92287700924099 /* Rectangle 73.png in Resources */,
+				813F6AA21E95EF81005E040E /* Extras_Smaller_Feather.png in Resources */,
 				815C31A01E906C0300DFD769 /* Rectangle 113.png in Resources */,
+				8113A45E1E94E96700CD5D20 /* Flat_LargeButterfly.png in Resources */,
+				8113A44F1E94E85D00CD5D20 /* 3D_FourLayered_Flower_Small.png in Resources */,
+				813F6A9F1E95EF81005E040E /* Extra_Pattern.png in Resources */,
 				81AE391A1E8E2A2D001508AE /* Main.storyboard in Resources */,
 				815C31A81E906C2F00DFD769 /* Rectangle 115@3x.png in Resources */,
+				817BA50E1E92251100924099 /* Flat_ThreeLayers_vinedBud.png in Resources */,
+				813F6AA41E95EF81005E040E /* Flat_SixStar_Small_Flower.png in Resources */,
 				815C31951E906B7D00DFD769 /* 3D_Pet_Bud@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,10 +454,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817BA5011E92115600924099 /* AKPickerView.swift in Sources */,
 				81AE39151E8E2A2D001508AE /* AppDelegate.swift in Sources */,
 				815C31901E90504100DFD769 /* CreateAccount.swift in Sources */,
 				81A092B41E8E2FAC00773220 /* 3DSBADesignerViewC.swift in Sources */,
 				815C318E1E904F4900DFD769 /* MainMenu.swift in Sources */,
+				817BA5031E92115600924099 /* UIImage+Resize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
