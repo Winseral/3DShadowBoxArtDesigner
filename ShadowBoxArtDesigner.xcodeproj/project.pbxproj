@@ -14,6 +14,9 @@
 		8113A45E1E94E96700CD5D20 /* Flat_LargeButterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A45B1E94E96700CD5D20 /* Flat_LargeButterfly.png */; };
 		8113A4621E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4611E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png */; };
 		8113A4641E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4631E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png */; };
+		812F58E61E98746600AECB34 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = 812F58E31E98746600AECB34 /* google.png */; };
+		812F58E71E98746600AECB34 /* google@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 812F58E41E98746600AECB34 /* google@2x.png */; };
+		812F58E81E98746600AECB34 /* google@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 812F58E51E98746600AECB34 /* google@3x.png */; };
 		813F6A9F1E95EF81005E040E /* Extra_Pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A961E95EF81005E040E /* Extra_Pattern.png */; };
 		813F6AA01E95EF81005E040E /* Extras_CutOut_Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A971E95EF81005E040E /* Extras_CutOut_Flower.png */; };
 		813F6AA11E95EF81005E040E /* Extras_Large_Feather.png in Resources */ = {isa = PBXBuildFile; fileRef = 813F6A981E95EF81005E040E /* Extras_Large_Feather.png */; };
@@ -79,6 +82,9 @@
 		8113A45B1E94E96700CD5D20 /* Flat_LargeButterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_LargeButterfly.png; sourceTree = "<group>"; };
 		8113A4611E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_ThreeLayer_Small_Flower.png; sourceTree = "<group>"; };
 		8113A4631E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_SingleLeaf_CentreCutout_Leaf.png; sourceTree = "<group>"; };
+		812F58E31E98746600AECB34 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		812F58E41E98746600AECB34 /* google@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google@2x.png"; sourceTree = "<group>"; };
+		812F58E51E98746600AECB34 /* google@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google@3x.png"; sourceTree = "<group>"; };
 		813F6A961E95EF81005E040E /* Extra_Pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Extra_Pattern.png; sourceTree = "<group>"; };
 		813F6A971E95EF81005E040E /* Extras_CutOut_Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Extras_CutOut_Flower.png; sourceTree = "<group>"; };
 		813F6A981E95EF81005E040E /* Extras_Large_Feather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Extras_Large_Feather.png; sourceTree = "<group>"; };
@@ -207,6 +213,9 @@
 				813F6A9C1E95EF81005E040E /* Flat_Small_Single_Leaf.png */,
 				813F6A9D1E95EF81005E040E /* Flat_Standard_Leaf.png */,
 				813F6A9E1E95EF81005E040E /* Single_Small_Pet_Leaf.png */,
+				812F58E31E98746600AECB34 /* google.png */,
+				812F58E41E98746600AECB34 /* google@2x.png */,
+				812F58E51E98746600AECB34 /* google@3x.png */,
 				81E7C0151E8F63D300149FEB /* ColorCard */,
 				81E7C0161E8F63D300149FEB /* ColorPaper */,
 				81E7C0171E8F63D300149FEB /* Design */,
@@ -352,9 +361,11 @@
 				8113A4641E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png in Resources */,
 				81E7C0241E8F63D300149FEB /* MainPage in Resources */,
 				817BA5191E922E0A00924099 /* prevBT.png in Resources */,
+				812F58E81E98746600AECB34 /* google@3x.png in Resources */,
 				81716E981E9464900021F129 /* SelectedButton.png in Resources */,
 				817067211E90CF8100602343 /* ButtonBackground.png in Resources */,
 				815C31961E906B7D00DFD769 /* 3D_Pet_Bud@3x.png in Resources */,
+				812F58E61E98746600AECB34 /* google.png in Resources */,
 				813F6AA71E95EF81005E040E /* Single_Small_Pet_Leaf.png in Resources */,
 				81AE391F1E8E2A2D001508AE /* LaunchScreen.storyboard in Resources */,
 				817BA5101E92251100924099 /* Flat_TwoLayeredBud.png in Resources */,
@@ -380,6 +391,7 @@
 				815C31A71E906C2F00DFD769 /* Rectangle 115@2x.png in Resources */,
 				81AE391C1E8E2A2D001508AE /* Assets.xcassets in Resources */,
 				817BA5131E9227EB00924099 /* Rectangle 2.png in Resources */,
+				812F58E71E98746600AECB34 /* google@2x.png in Resources */,
 				817BA5111E92251100924099 /* Flat_TwoLeaf_Bud.png in Resources */,
 				8113A4551E94E85D00CD5D20 /* 3D_Pet_Bud.png in Resources */,
 				8113A4581E94E85D00CD5D20 /* 3D_ThreeLayered_Flower_Small.png in Resources */,

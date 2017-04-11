@@ -15,19 +15,22 @@ class MainMenu: UIViewController, GIDSignInUIDelegate{
     //create unbound seque to Create Account
     var CreateAccountVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateAccountVC")
     
+    var DesignVC = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "DesignVC")
+    
     @IBOutlet weak var GSignInButton: GIDSignInButton!
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    // GIDSignIn.sharedInstance().uiDelegate = self
-     // GIDSignIn.sharedInstance().signIn()
+   
     }
     
     
-    @IBAction func GoogleSignInButton(_ sender: UIButton) {
-        
+    @IBAction func GoogleSignInButton(_ sender: GIDSignInButton) {
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+        self.present(DesignVC, animated: true, completion: nil)
     }
     
     
