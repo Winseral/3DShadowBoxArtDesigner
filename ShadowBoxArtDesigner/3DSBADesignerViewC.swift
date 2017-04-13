@@ -11,6 +11,10 @@ import FirebaseDatabase
 
 class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate  {
     
+    //create unbound seque to OrderVC Account
+    var orderVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OrderVC")
+
+    
     let Flat_Flowers: [UIImage] = [UIImage(named:"Flat_SingleLayer_VerySmall_Crystal_Bud.png")!, UIImage(named:"Flat_ThreeLayers.png")!, UIImage(named:"Flat_TwoLayeredBud.png")!, UIImage(named:"Flat_TwoLeaf_Bud.png")!, UIImage(named:"Flat_SingleLayer_Small_Flower.png")!,
                                    UIImage(named:"Flat_ThreeLayers_vinedBud.png")!, UIImage(named:"Flat_ThreeLayer_Small_Flower.png")!, UIImage(named:"Flat_SixStar_Large_Flower.png")!, UIImage(named:"Flat_SixStar_Small_Flower.png")!]
     let Flat_Flowers_Costs = [0.10,0.20,0.20,0.30,0.10,0.30,0.40,0.20,0.10]
@@ -62,6 +66,12 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     @IBOutlet weak var LeavesButton: UIButton!
     @IBOutlet weak var ExtrasButton: UIButton!
     
+    //button outlet Canvas
+    @IBOutlet weak var CanvasButton: UIButton!
+    @IBOutlet var CanvasMenu: UIView!
+    @IBOutlet weak var CanvasOrderButton: UIButton!
+    
+    
     //Gesture outlets
     @IBOutlet var DoubleTap: UITapGestureRecognizer!
 
@@ -79,6 +89,8 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         ImagePicker.layer.cornerRadius = 5
         ImagePicker.layer.shadowRadius = 2
         ImagePicker.addGestureRecognizer(tap)
+        
+        CanvasMenu.layer.cornerRadius = 5
         
     }
     func numberOfItemsInPickerView(_ pickerView: AKPickerView) -> Int {
@@ -109,11 +121,11 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
 
 //List Menu and its buttons
     @IBAction func ListBtn(_ sender: UIButton) {
-        if(ListButton.backgroundImage(for: .selected) != backbuttonimage)
-        {ListButton.setBackgroundImage(backbuttonimage, for: .normal)
-        ListMenu.alpha = 0}
-        else{ListButton.setBackgroundImage(selectbuttonimage, for: .normal)
-        ListMenu.alpha = 1}}
+        if(ListButton.backgroundImage(for: .selected) != selectbuttonimage)
+        {ListButton.setBackgroundImage(selectbuttonimage, for: .normal)
+        ListMenu.alpha = 1}
+        else{ListButton.setBackgroundImage(backbuttonimage, for: .normal)
+        ListMenu.alpha = 0}}
     
     @IBAction func FlatFlowersBtn(_ sender: UIButton) {
         restListButtonBackgroundImages()
@@ -150,7 +162,45 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     D3FlowersButton.setBackgroundImage(backbuttonimage, for: .normal)
     ExtrasButton.setBackgroundImage(backbuttonimage, for: .normal)
     }
-
+//Canvas Menu and Buttons
+    @IBAction func CanvasMenuBtn(_ sender: UIButton) {
+       
+        if(CanvasButton.backgroundImage(for: .selected) != selectbuttonimage)
+       {
+        CanvasButton.setBackgroundImage(selectbuttonimage, for: .normal)
+        
+        // animates Canvas Menu
+        self.view.addSubview(CanvasMenu)
+        CanvasMenu.center = self.view.center
+        CanvasMenu.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
+        CanvasMenu.alpha = 0
+        
+        UIView.animate(withDuration: 0.7, animations:
+            {
+                self.CanvasMenu.alpha = 1
+                self.CanvasMenu.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+        })
+        }else
+        {
+            CanvasButton.setBackgroundImage(backbuttonimage, for: .normal)
+            CanvasMenuDoneBtn(CanvasMenuBtn: UIButton.self)
+        }
+    }
+    
+    @IBAction func CanvasMenuDoneBtn(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.3, delay: 0.05, animations: {self.CanvasMenu.alpha = 0
+            self.CanvasMenu.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)
+            self.CanvasButton.setBackgroundImage(self.backbuttonimage, for: .normal)}) { (AniFinished) in
+                if(AniFinished){self.CanvasMenu.removeFromSuperview()}
+        }
+    }
+    
+    @IBAction func CanvasMenuOrderBtn(_ sender: UIButton) {
+        self.present(orderVC, animated: true, completion: nil)
+            }
+    
+   
 //Gesture Functions Double Tap Picker list, move and rotate Canvas UIImages
     func DT()
     {

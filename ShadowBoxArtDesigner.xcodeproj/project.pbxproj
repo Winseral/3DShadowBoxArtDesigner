@@ -52,6 +52,7 @@
 		817BA5151E92287700924099 /* Rectangle 73.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5141E92287700924099 /* Rectangle 73.png */; };
 		817BA5181E922E0A00924099 /* nextBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5161E922E0A00924099 /* nextBT.png */; };
 		817BA5191E922E0A00924099 /* prevBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 817BA5171E922E0A00924099 /* prevBT.png */; };
+		817C786C1E9F50CF0058BE3D /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C786B1E9F50CF0058BE3D /* OrderVC.swift */; };
 		8184214C1E9442BA00AA44F2 /* Flat_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 818421491E9442BA00AA44F2 /* Flat_Leaf.png */; };
 		8184214D1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8184214A1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf.png */; };
 		8184214E1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8184214B1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf2.png */; };
@@ -122,6 +123,7 @@
 		817BA5141E92287700924099 /* Rectangle 73.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle 73.png"; path = "Design_List_Menu/Rectangle 73.png"; sourceTree = "<group>"; };
 		817BA5161E922E0A00924099 /* nextBT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextBT.png; path = buttons/nextBT.png; sourceTree = "<group>"; };
 		817BA5171E922E0A00924099 /* prevBT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prevBT.png; path = buttons/prevBT.png; sourceTree = "<group>"; };
+		817C786B1E9F50CF0058BE3D /* OrderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
 		818421491E9442BA00AA44F2 /* Flat_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_Leaf.png; path = Design_List_Leaves/Flat_Leaf.png; sourceTree = "<group>"; };
 		8184214A1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_SevenLeaf_Leaf.png; path = Design_List_Leaves/Flat_SevenLeaf_Leaf.png; sourceTree = "<group>"; };
 		8184214B1E9442BA00AA44F2 /* Flat_SevenLeaf_Leaf2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flat_SevenLeaf_Leaf2.png; path = Design_List_Leaves/Flat_SevenLeaf_Leaf2.png; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				81A092B31E8E2FAC00773220 /* 3DSBADesignerViewC.swift */,
 				815C318D1E904F4900DFD769 /* MainMenu.swift */,
 				81AE39141E8E2A2D001508AE /* AppDelegate.swift */,
+				817C786B1E9F50CF0058BE3D /* OrderVC.swift */,
 				81AE39181E8E2A2D001508AE /* Main.storyboard */,
 				815C318F1E90504100DFD769 /* CreateAccount.swift */,
 				81AE391D1E8E2A2D001508AE /* LaunchScreen.storyboard */,
@@ -466,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817C786C1E9F50CF0058BE3D /* OrderVC.swift in Sources */,
 				817BA5011E92115600924099 /* AKPickerView.swift in Sources */,
 				81AE39151E8E2A2D001508AE /* AppDelegate.swift in Sources */,
 				815C31901E90504100DFD769 /* CreateAccount.swift in Sources */,
