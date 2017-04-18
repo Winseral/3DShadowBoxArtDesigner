@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseDatabase
 
 class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate  {
     
-    //create unbound seque to OrderVC Account
-    var orderVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OrderVC")
-
     
-    let Flat_Flowers: [UIImage] = [UIImage(named:"Flat_SingleLayer_VerySmall_Crystal_Bud.png")!, UIImage(named:"Flat_ThreeLayers.png")!, UIImage(named:"Flat_TwoLayeredBud.png")!, UIImage(named:"Flat_TwoLeaf_Bud.png")!, UIImage(named:"Flat_SingleLayer_Small_Flower.png")!,
-                                   UIImage(named:"Flat_ThreeLayers_vinedBud.png")!, UIImage(named:"Flat_ThreeLayer_Small_Flower.png")!, UIImage(named:"Flat_SixStar_Large_Flower.png")!, UIImage(named:"Flat_SixStar_Small_Flower.png")!]
+    //transfer totals delegate
+    var delegate: transfertotalsdelegate?
+    
+
+    let Flat_Flowers: [UIImage] = [UIImage(named:"Flat_SingleLayer_VerySmall_Crystal_Bud.png")!, UIImage(named:"Flat_ThreeLayers.png")!, UIImage(named:"Flat_TwoLayeredBud.png")!, UIImage(named:"Flat_TwoLeaf_Bud.png")!, UIImage(named:"Flat_SingleLayer_Small_Flower.png")!,UIImage(named:"Flat_ThreeLayers_vinedBud.png")!, UIImage(named:"Flat_ThreeLayer_Small_Flower.png")!, UIImage(named:"Flat_SixStar_Large_Flower.png")!, UIImage(named:"Flat_SixStar_Small_Flower.png")!]
     let Flat_Flowers_Costs = [0.10,0.20,0.20,0.30,0.10,0.30,0.40,0.20,0.10]
     
     let Leaves:[UIImage] = [UIImage(named:"Flat_Leaf.png")!, UIImage(named:"Flat_SevenLeaf_Leaf.png")!, UIImage(named:"Flat_SevenLeaf_Leaf2.png")!,UIImage(named:"Flat_SingleLeaf_CentreCutout_Leaf.png")!, UIImage(named:"Flat_Small_Single_Leaf.png")!,UIImage(named:"Flat_Standard_Leaf.png")!, UIImage(named:"Single_Small_Pet_Leaf.png")!]
@@ -28,7 +29,6 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     let Extras:[UIImage] = [UIImage(named:"Flat_LargeButterfly.png")!, UIImage(named:"Extras_CutOut_Flower.png")!, UIImage(named:"Extra_Pattern.png")!, UIImage(named:"Extras_Large_Feather.png")!, UIImage(named:"Extras_Smaller_Feather.png")!]
     let Extras_Costs = [0.45,0.30,0.40,0.30,0.25]
     
-    var storeCanvasImages = [UIImage]()
 
     //vars
     var Listclicktest = 0
@@ -40,10 +40,10 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     var sumLeaves = 0.00
     var sumD3_Flowers = 0.00
     var sumExtras = 0.00
-    var totalsum = 0.00
     
     var newimage = UIImage()
     var newuiimageView: [UIImageView] = []
+    var SavedCanvasScreenShot = UIImage()
     
     
     //let
@@ -58,13 +58,21 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     //Label outlets
     @IBOutlet weak var PickerLabel: UILabel!
     
-    //button outlets ListButtons
+    //button outlets Buttons
     @IBOutlet weak var ListButton: UIButton!
+    @IBOutlet weak var SaveButton: UIButton!
+    
     
     @IBOutlet weak var FlatFlowersButton: UIButton!
     @IBOutlet weak var D3FlowersButton: UIButton!
     @IBOutlet weak var LeavesButton: UIButton!
     @IBOutlet weak var ExtrasButton: UIButton!
+    
+    //Save Menu
+    @IBOutlet var SaveMenu: UIView!
+    @IBOutlet weak var SaveFileName: UITextField!
+    @IBOutlet weak var SavetoFileButton: UIButton!
+    
     
     //button outlet Canvas
     @IBOutlet weak var CanvasButton: UIButton!
@@ -91,6 +99,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         ImagePicker.addGestureRecognizer(tap)
         
         CanvasMenu.layer.cornerRadius = 5
+        SaveMenu.layer.cornerRadius = 5
         
     }
     func numberOfItemsInPickerView(_ pickerView: AKPickerView) -> Int {
@@ -162,11 +171,64 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     D3FlowersButton.setBackgroundImage(backbuttonimage, for: .normal)
     ExtrasButton.setBackgroundImage(backbuttonimage, for: .normal)
     }
+    
+//Save Button
+    @IBAction func SaveBtn(_ sender: UIButton) {
+        if(SaveButton.backgroundImage(for: .selected) != selectbuttonimage)
+        {
+            //turn off Canvas Menu
+            if self.CanvasButton.backgroundImage(for: .normal) == selectbuttonimage
+            {
+            self.CanvasMenuDoneBtn(SaveButton)
+            }
+            
+            SaveButton.setBackgroundImage(selectbuttonimage, for: .normal)
+            
+            // animates Canvas Menu
+            self.view.addSubview(SaveMenu)
+            SaveMenu.center = self.view.center
+            SaveMenu.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
+            SaveMenu.alpha = 0
+            
+            UIView.animate(withDuration: 0.7, animations:
+                {
+                    self.SaveMenu.alpha = 1
+                    self.SaveMenu.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+            })
+        }else
+        {
+            SaveButton.setBackgroundImage(backbuttonimage, for: .normal)
+            self.SaveMenuCancel(SaveButton)
+        }
+    }
+    @IBAction func SaveMenuCancel(_ sender: UIButton) {
+        
+        UIView.animate(withDuration: 0.3, delay: 0.05, animations: {self.SaveMenu.alpha = 0
+            self.SaveMenu.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)
+            self.SaveButton.setBackgroundImage(self.backbuttonimage, for: .normal)}) { (AniFinished) in
+                if(AniFinished){self.SaveMenu.removeFromSuperview()}
+        }
+    }
+        
+    @IBAction func SaveToFileBtn(_ sender: UIButton) {
+        //Convert SavedCanvasScreenShot to Compressed NSData
+        //Check Filename is not null
+        //send SavedFilename and SavedCanvasScreenshot to this userID Firebase
+        
+    }
+    
 //Canvas Menu and Buttons
     @IBAction func CanvasMenuBtn(_ sender: UIButton) {
        
         if(CanvasButton.backgroundImage(for: .selected) != selectbuttonimage)
        {
+        
+        //turn off Saved Menu
+        if self.SaveButton.backgroundImage(for: .normal) == selectbuttonimage
+        {
+            self.SaveMenuCancel(CanvasButton)
+        }
+
         CanvasButton.setBackgroundImage(selectbuttonimage, for: .normal)
         
         // animates Canvas Menu
@@ -197,14 +259,24 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     }
     
     @IBAction func CanvasMenuOrderBtn(_ sender: UIButton) {
-        self.present(orderVC, animated: true, completion: nil)
+            self.dismiss(animated: true) {}
+        
+        //screen shot of the Canvas to pass over to the Order
+        UIGraphicsBeginImageContext(CanvasView.frame.size)
+        CanvasView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let CanvasScreenShot = UIGraphicsGetImageFromCurrentImageContext()
+        SavedCanvasScreenShot = CanvasScreenShot!
+        UIGraphicsEndImageContext()
+        // UIImageWriteToSavedPhotosAlbum(CanvasScreenShot!, nil, nil, nil)
+        
+        delegate?.transferingtotals(Canvasphoto: CanvasScreenShot!, sumff: sumFlat_Flowers, suml: sumLeaves, sum3df: sumD3_Flowers, sume: sumExtras)
             }
     
    
 //Gesture Functions Double Tap Picker list, move and rotate Canvas UIImages
     func DT()
     {
-    
+     
         newuiimageView += [UIImageView(frame: CGRect(x: 0, y: CanvasView.frame.maxY - 130, width: 40, height: 40))]
         
         if Listclicktest == 1
@@ -294,12 +366,6 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
             newuiimageView[tag].removeFromSuperview()
             newuiimageView.remove(at: tag)
 
-        print("Countimages after delete \(countimages)")
-        print("SumLeaves = \(sumLeaves)")
-        print("Sum 3D flowers = \(sumD3_Flowers)")
-        print("Sum Extras = \(sumExtras)")
-        print("Sum flat Flowers = \(sumFlat_Flowers)")
-            
         }
     }
     
@@ -311,5 +377,24 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         if(rotateUIimageview.rotation < 0)
         {rotateUIimageview.rotation -= 0.0872665}
     }
-
+    
+//Logout of Firebase 
+    
+    @IBAction func Logout(_ sender: UIBarButtonItem) {
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
 }
+
+protocol transfertotalsdelegate
+{
+    func transferingtotals(Canvasphoto: UIImage, sumff:Double,suml:Double,sum3df:Double,sume:Double)
+}
+

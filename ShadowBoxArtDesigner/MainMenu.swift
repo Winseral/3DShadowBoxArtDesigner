@@ -15,7 +15,7 @@ class MainMenu: UIViewController, GIDSignInUIDelegate{
     //create unbound seque to Create Account
     var CreateAccountVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateAccountVC")
     
-    var DesignVC = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "DesignVC")
+    var OrderVC = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "OrderVC")
     
     @IBOutlet weak var GSignInButton: GIDSignInButton!
     @IBOutlet weak var EmailTextField: UITextField!
@@ -30,11 +30,31 @@ class MainMenu: UIViewController, GIDSignInUIDelegate{
     @IBAction func GoogleSignInButton(_ sender: GIDSignInButton) {
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
-        self.present(DesignVC, animated: true, completion: nil)
+        self.present(OrderVC, animated: false, completion: nil)
     }
     
     
     @IBAction func SubmitButton(_ sender: UIButton) {
+        let usr = EmailTextField.text
+        let pass = PasswordTextField.text
+        
+        if usr == "" || pass  == ""
+        {print ("send a error message")}
+        else
+        {
+        FIRAuth.auth()?.signIn(withEmail: usr!, password: pass!, completion: { (user, Error) in
+            
+                if let error = Error {
+                    print (error.localizedDescription)
+                    return
+                }else
+                {
+                    self.present(self.OrderVC, animated: false, completion: nil)
+                    return
+                }
+            
+            })
+        }
     }
     
     

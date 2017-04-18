@@ -11,6 +11,8 @@ import FirebaseAuth
 import GoogleSignIn
 
 class CreateAccount: UIViewController {
+    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
     
     //create unbound seque to DesignVC Account
     var DesignVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DesignVC")
@@ -26,6 +28,20 @@ class CreateAccount: UIViewController {
     }
 
     @IBAction func SubmitButton(_ sender: UIButton) {
+        let usr = EmailTextField.text
+        let pass = PasswordTextField.text
+        
+        if usr == "" || (pass?.characters.count)! < 6
+        {print ("send a error message Password must be 6 or more characters")}
+        else{
+        FIRAuth.auth()?.createUser(withEmail: usr!, password: pass!) { (user, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                print("\(user!.email!) created")
+            }
         self.present(DesignVC, animated: true, completion: nil)
+        }
     }
 }
