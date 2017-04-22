@@ -39,7 +39,7 @@ class OrderVC: UIViewController, transfertotalsdelegate {
     @IBOutlet weak var SpecialNotes: UITextField!
     
     
-    func transferingtotals(Canvasphoto: UIImage, sumff: Double, suml: Double, sum3df: Double, sume: Double) {
+    func transferingtotals(Canvasphoto: UIImage,sumff: Double, suml: Double, sum3df: Double, sume: Double) {
         SumFlatFlowerText.text = String(format: "%.02f",sumff)
         Sum3DFlowersText.text = String(format: "%.02f",sum3df)
         SumLeavesText.text = String(format: "%.02f",suml)
@@ -60,6 +60,8 @@ class OrderVC: UIViewController, transfertotalsdelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        //firststart is change by Function transferingTotals notfirsttime Int
         if(firststart == 0)
         {
             self.present(DesignVC, animated: false, completion: nil)

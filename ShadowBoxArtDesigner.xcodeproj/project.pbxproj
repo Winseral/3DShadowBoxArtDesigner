@@ -71,6 +71,7 @@
 		81E7C0221E8F63D300149FEB /* Design_List_Menu in Resources */ = {isa = PBXBuildFile; fileRef = 81E7C01A1E8F63D300149FEB /* Design_List_Menu */; };
 		81E7C0231E8F63D300149FEB /* Design_Picker_Flat_Flower in Resources */ = {isa = PBXBuildFile; fileRef = 81E7C01B1E8F63D300149FEB /* Design_Picker_Flat_Flower */; };
 		81E7C0241E8F63D300149FEB /* MainPage in Resources */ = {isa = PBXBuildFile; fileRef = 81E7C01C1E8F63D300149FEB /* MainPage */; };
+		81FBA6C81EA73D490067DFA9 /* SavedCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBA6C71EA73D490067DFA9 /* SavedCanvas.swift */; };
 		838ED838010AF9FDE8C2B8DF /* Pods_ShadowBoxArtDesigner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06F2F0164102A9F00958629 /* Pods_ShadowBoxArtDesigner.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,7 @@
 		81E7C01A1E8F63D300149FEB /* Design_List_Menu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Design_List_Menu; sourceTree = "<group>"; };
 		81E7C01B1E8F63D300149FEB /* Design_Picker_Flat_Flower */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Design_Picker_Flat_Flower; sourceTree = "<group>"; };
 		81E7C01C1E8F63D300149FEB /* MainPage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainPage; sourceTree = "<group>"; };
+		81FBA6C71EA73D490067DFA9 /* SavedCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCanvas.swift; sourceTree = "<group>"; };
 		8FFBB92ACB36612B1B4FF3E5 /* Pods-ShadowBoxArtDesigner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowBoxArtDesigner.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowBoxArtDesigner/Pods-ShadowBoxArtDesigner.release.xcconfig"; sourceTree = "<group>"; };
 		D06F2F0164102A9F00958629 /* Pods_ShadowBoxArtDesigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowBoxArtDesigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -264,6 +266,7 @@
 				81A092B51E8E322900773220 /* GoogleService-Info.plist */,
 				81AE39201E8E2A2D001508AE /* Info.plist */,
 				8170ABC81E8F36C500A84E9F /* ShadowBoxArtDesigner-Bridging-Header.h */,
+				81FBA6C71EA73D490067DFA9 /* SavedCanvas.swift */,
 			);
 			path = ShadowBoxArtDesigner;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				817C786C1E9F50CF0058BE3D /* OrderVC.swift in Sources */,
 				817BA5011E92115600924099 /* AKPickerView.swift in Sources */,
 				81AE39151E8E2A2D001508AE /* AppDelegate.swift in Sources */,
+				81FBA6C81EA73D490067DFA9 /* SavedCanvas.swift in Sources */,
 				815C31901E90504100DFD769 /* CreateAccount.swift in Sources */,
 				81A092B41E8E2FAC00773220 /* 3DSBADesignerViewC.swift in Sources */,
 				815C318E1E904F4900DFD769 /* MainMenu.swift in Sources */,

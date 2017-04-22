@@ -13,6 +13,11 @@ import FirebaseDatabase
 class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate  {
     
     
+    //FirebaseDatabase reference
+    var dbRef: FIRDatabaseReference!{
+        return FIRDatabase.database().reference()
+    }
+    
     //transfer totals delegate
     var delegate: transfertotalsdelegate?
     
@@ -34,7 +39,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     var Listclicktest = 0
     var countimages = 0
     var valueSelected = 0
-    
+    var notfirsttime = 0
     
     var sumFlat_Flowers = 0.00
     var sumLeaves = 0.00
@@ -62,7 +67,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     @IBOutlet weak var ListButton: UIButton!
     @IBOutlet weak var SaveButton: UIButton!
     
-    
+    //picerk list buttons
     @IBOutlet weak var FlatFlowersButton: UIButton!
     @IBOutlet weak var D3FlowersButton: UIButton!
     @IBOutlet weak var LeavesButton: UIButton!
@@ -78,6 +83,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     @IBOutlet weak var CanvasButton: UIButton!
     @IBOutlet var CanvasMenu: UIView!
     @IBOutlet weak var CanvasOrderButton: UIButton!
+    @IBOutlet weak var CanvasClearButton: UIButton!
     
     
     //Gesture outlets
@@ -211,18 +217,47 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     }
         
     @IBAction func SaveToFileBtn(_ sender: UIButton) {
-        //Convert SavedCanvasScreenShot to Compressed NSData
-        //Check Filename is not null
-        //send SavedFilename and SavedCanvasScreenshot to this userID Firebase
         
+        //let saveCanvas = dbRef.child("AllSavedCanvases").childByAutoId()
+        var NamedCanvas = SaveFileName.text
+        
+        //screen shot of the Canvas
+        UIGraphicsBeginImageContext(CanvasView.frame.size)
+        CanvasView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let SavedCanvasScreenShot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //Convert SavedCanvasScreenShot to Compressed NSData - base64String
+        let data = UIImageJPEGRepresentation(SavedCanvasScreenShot!,0.1)!
+        let base64String = data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
+        
+        if(NamedCanvas != "")
+        {
+            //get firebase UID
+            let user = FIRAuth.auth()?.currentUser
+                if let user = user {
+                    let uid = user.uid
+                    let saveCanvas = dbRef.child("SavedCanvases").child(uid)
+                    NamedCanvas = "\(SaveFileName.text!)"
+                    
+                    //send SavedFilename and SavedCanvasScreenshot to this userID Firebase
+                    let CanvasSaved = SavedCanvas(canvasname: NamedCanvas!, savedimage: base64String, saved3dflowerssum: sumD3_Flowers, savedflatflowerssum: sumFlat_Flowers, savedleavessum: sumLeaves, savedextrassum: sumExtras)
+                    
+                    saveCanvas.setValue(CanvasSaved.toanyobject())
+                    
+                    UIView.animate(withDuration: 1, animations: {
+                        self.SaveFileName.text = "\(NamedCanvas!)"
+                        self.SaveMenuCancel(self.SavetoFileButton)
+                    })
+                                    }
+        }else{SaveFileName.placeholder = "You must supply a name"}
     }
     
 //Canvas Menu and Buttons
     @IBAction func CanvasMenuBtn(_ sender: UIButton) {
        
         if(CanvasButton.backgroundImage(for: .selected) != selectbuttonimage)
-       {
-        
+        {
         //turn off Saved Menu
         if self.SaveButton.backgroundImage(for: .normal) == selectbuttonimage
         {
@@ -265,13 +300,28 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         UIGraphicsBeginImageContext(CanvasView.frame.size)
         CanvasView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let CanvasScreenShot = UIGraphicsGetImageFromCurrentImageContext()
-        SavedCanvasScreenShot = CanvasScreenShot!
+        //SavedCanvasScreenShot = CanvasScreenShot!
         UIGraphicsEndImageContext()
         // UIImageWriteToSavedPhotosAlbum(CanvasScreenShot!, nil, nil, nil)
         
         delegate?.transferingtotals(Canvasphoto: CanvasScreenShot!, sumff: sumFlat_Flowers, suml: sumLeaves, sum3df: sumD3_Flowers, sume: sumExtras)
             }
     
+    @IBAction func CanvasClearBtn(_ sender: UIButton) {
+        //rests to original Canvas
+        //set all vars to nil
+        sumFlat_Flowers = 0.00
+        sumLeaves = 0.00
+        sumD3_Flowers = 0.00
+        sumExtras = 0.00
+        
+        //clear images from the canvas
+        for index in stride(from: newuiimageView.count - 1, through: 0, by: -1) {
+            newuiimageView[index].removeFromSuperview()
+        }
+        newuiimageView.removeAll()
+
+    }
    
 //Gesture Functions Double Tap Picker list, move and rotate Canvas UIImages
     func DT()
@@ -385,10 +435,9 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         do {
             try firebaseAuth?.signOut()
         } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+        print ("Error signing out: %@", signOutError)
         }
-        
-         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
 }
