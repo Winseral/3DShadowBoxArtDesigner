@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate  {
+class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
     
     
     //FirebaseDatabase reference
@@ -34,6 +34,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     let Extras:[UIImage] = [UIImage(named:"Flat_LargeButterfly.png")!, UIImage(named:"Extras_CutOut_Flower.png")!, UIImage(named:"Extra_Pattern.png")!, UIImage(named:"Extras_Large_Feather.png")!, UIImage(named:"Extras_Smaller_Feather.png")!]
     let Extras_Costs = [0.45,0.30,0.40,0.30,0.25]
     
+    let CanvasColourPicker: NSDictionary = ["Purple": UIImage(named:"Card_Purple.png")!, "Rose": UIImage(named:"Card_Rose.png")!, "White":UIImage(named:"Card_White.png")!, "Light Pink": UIImage(named:"Card_Pink_Light.png")!, "Dark Pink ":UIImage(named:"Card_Pink_Dark")!, "Dark Green": UIImage(named:"Card_Green_Dark")!, "Green": UIImage(named:"Card_Green_Flat.png")!, "Light Green": UIImage(named:"Card_Green_Lightest")!, "Grass Green": UIImage(named:"Card_Green_Grass_Flat")!]
 
     //vars
     var Listclicktest = 0
@@ -59,6 +60,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     
     @IBOutlet var MainView: UIView!
     @IBOutlet weak var CanvasView: UIView!
+    @IBOutlet weak var CanvasImage: UIImageView!
     
     //Label outlets
     @IBOutlet weak var PickerLabel: UILabel!
@@ -67,7 +69,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     @IBOutlet weak var ListButton: UIButton!
     @IBOutlet weak var SaveButton: UIButton!
     
-    //picerk list buttons
+    //pick list buttons
     @IBOutlet weak var FlatFlowersButton: UIButton!
     @IBOutlet weak var D3FlowersButton: UIButton!
     @IBOutlet weak var LeavesButton: UIButton!
@@ -77,6 +79,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     @IBOutlet var SaveMenu: UIView!
     @IBOutlet weak var SaveFileName: UITextField!
     @IBOutlet weak var SavetoFileButton: UIButton!
+    @IBOutlet weak var SaveSpinner: UIActivityIndicatorView!
     
     
     //button outlet Canvas
@@ -84,7 +87,13 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     @IBOutlet var CanvasMenu: UIView!
     @IBOutlet weak var CanvasOrderButton: UIButton!
     @IBOutlet weak var CanvasClearButton: UIButton!
+    @IBOutlet weak var CanvasLoadButton: UIButton!
+    @IBOutlet weak var CanvasSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var CanvasColourButton: UIButton!
     
+    //Canvas Colour Picker
+    @IBOutlet var CanvasColourPickerView: UIView!
+    @IBOutlet weak var CanvasCPicker: UIPickerView!
     
     //Gesture outlets
     @IBOutlet var DoubleTap: UITapGestureRecognizer!
@@ -104,10 +113,19 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         ImagePicker.layer.shadowRadius = 2
         ImagePicker.addGestureRecognizer(tap)
         
+        CanvasCPicker.delegate = self
+        CanvasCPicker.dataSource = self
+        
         CanvasMenu.layer.cornerRadius = 5
         SaveMenu.layer.cornerRadius = 5
+        CanvasColourPickerView.layer.cornerRadius = 5
+        CanvasSpinner.alpha = 0
+        SaveSpinner.alpha = 0
         
+                
     }
+    
+//AKPicker Horiztonal Picker for materials
     func numberOfItemsInPickerView(_ pickerView: AKPickerView) -> Int {
         
         if Listclicktest == 1
@@ -133,6 +151,25 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
         valueSelected = item
     }
+    
+//Picker for Canvas Colour 
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: (CanvasColourPicker.allKeys[row] as? String)!, attributes: [NSForegroundColorAttributeName : UIColor.white])
+        return attributedString
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return CanvasColourPicker.count
+    }
+   
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        CanvasImage.image = CanvasColourPicker.allValues[row] as? UIImage}
+    
 
 //List Menu and its buttons
     @IBAction func ListBtn(_ sender: UIButton) {
@@ -218,7 +255,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         
     @IBAction func SaveToFileBtn(_ sender: UIButton) {
         
-        //let saveCanvas = dbRef.child("AllSavedCanvases").childByAutoId()
+        SaveSpinner.alpha = 0.85
         var NamedCanvas = SaveFileName.text
         
         //screen shot of the Canvas
@@ -228,8 +265,8 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         UIGraphicsEndImageContext()
         
         //Convert SavedCanvasScreenShot to Compressed NSData - base64String
-        let data = UIImageJPEGRepresentation(SavedCanvasScreenShot!,0.1)!
-        let base64String = data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
+        let data = UIImageJPEGRepresentation(SavedCanvasScreenShot!,0.8)!
+        let base64String = data.base64EncodedString(options: NSData.Base64EncodingOptions.init(rawValue: 0))
         
         if(NamedCanvas != "")
         {
@@ -244,6 +281,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
                     let CanvasSaved = SavedCanvas(canvasname: NamedCanvas!, savedimage: base64String, saved3dflowerssum: sumD3_Flowers, savedflatflowerssum: sumFlat_Flowers, savedleavessum: sumLeaves, savedextrassum: sumExtras)
                     
                     saveCanvas.setValue(CanvasSaved.toanyobject())
+                    SaveSpinner.alpha = 0
                     
                     UIView.animate(withDuration: 1, animations: {
                         self.SaveFileName.text = "\(NamedCanvas!)"
@@ -251,6 +289,73 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
                     })
                                     }
         }else{SaveFileName.placeholder = "You must supply a name"}
+    }
+    
+    @IBAction func CanvasLoadBtn(_ sender: Any) {
+        // get the image and values from Firebase
+        self.CanvasSpinner.alpha = 0.85
+        let user = FIRAuth.auth()!.currentUser!.uid
+        let dataRef = dbRef.child("SavedCanvases").child(user)
+
+        dataRef.queryOrdered(byChild: "\(user)").observeSingleEvent(of:
+            .value, with: { (Snapshot) in
+                let value = Snapshot.value as? NSDictionary
+                let loadedencoded = value?["savedimage"] as! String!
+                let loaded3dflowerssum = value?["saved3dflowerssum"] as! Double!
+                let loadedflatflowersum = value?["savedflatflowerssum"] as! Double!
+                let loadedleavessum = value?["savedleavessum"] as! Double!
+                let loadedextrassum = value?["savedextrassum"] as! Double!
+                
+                self.CanvasSpinner.alpha = 0
+                
+                if(loadedencoded != nil)
+                {
+                //cant change the Canvas Colour if loaded image
+                self.CanvasColourButton.isEnabled = false
+                    
+                //convert 64basestring image to uiimage
+                let decodedData = NSData(base64Encoded: loadedencoded!, options: NSData.Base64DecodingOptions.init(rawValue: 0))
+                let loadedimage = UIImage(data: decodedData as! Data)
+                
+                self.CanvasImage.image = loadedimage
+                    
+                self.CanvasMenuDoneBtn(self.CanvasLoadButton)
+                    
+                }else{
+                        self.CanvasMenuDoneBtn(self.CanvasLoadButton)
+                    let alert = UIAlertController(title: "Alert", message: "Error - no saved canvas found or loaded", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                    
+                //add sums
+                if (loadedflatflowersum != 0 && loadedflatflowersum != nil)
+                {self.sumFlat_Flowers += loadedflatflowersum!}
+                if (loadedleavessum != 0 && loadedleavessum != nil)
+                {self.sumLeaves += loadedleavessum!}
+                if (loaded3dflowerssum != 0 && loaded3dflowerssum != nil)
+                {self.sumD3_Flowers += loaded3dflowerssum!}
+                if (loadedextrassum != 0  && loadedextrassum != nil)
+                {self.sumExtras += loadedextrassum!}
+        })
+    }
+
+    @IBAction func CanvasColourBtn(_ sender: UIButton) {
+        //turn off Canvas menu
+        self.CanvasMenuDoneBtn(self.CanvasColourButton)
+        
+        //animate the CanvasColourPicker menu
+        self.view.addSubview(CanvasColourPickerView)
+        CanvasColourPickerView.center = self.view.center
+        CanvasColourPickerView.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
+        CanvasColourPickerView.alpha = 0
+        
+        UIView.animate(withDuration: 0.7, animations:
+            {
+                self.CanvasColourPickerView.alpha = 1
+                self.CanvasColourPickerView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+        })
+
     }
     
 //Canvas Menu and Buttons
@@ -294,13 +399,12 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     }
     
     @IBAction func CanvasMenuOrderBtn(_ sender: UIButton) {
-            self.dismiss(animated: true) {}
+        self.dismiss(animated: true) {}
         
         //screen shot of the Canvas to pass over to the Order
         UIGraphicsBeginImageContext(CanvasView.frame.size)
         CanvasView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let CanvasScreenShot = UIGraphicsGetImageFromCurrentImageContext()
-        //SavedCanvasScreenShot = CanvasScreenShot!
         UIGraphicsEndImageContext()
         // UIImageWriteToSavedPhotosAlbum(CanvasScreenShot!, nil, nil, nil)
         
@@ -309,6 +413,9 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     
     @IBAction func CanvasClearBtn(_ sender: UIButton) {
         //rests to original Canvas
+        
+        self.CanvasColourButton.isEnabled = true
+        
         //set all vars to nil
         sumFlat_Flowers = 0.00
         sumLeaves = 0.00
@@ -320,6 +427,9 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
             newuiimageView[index].removeFromSuperview()
         }
         newuiimageView.removeAll()
+        
+        //rest the canvas to default
+        CanvasImage.image = UIImage(named: "Card_Purple.png")
 
     }
    
@@ -428,19 +538,21 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         {rotateUIimageview.rotation -= 0.0872665}
     }
     
-//Logout of Firebase 
-    
+//Logout of Firebase
     @IBAction func Logout(_ sender: UIBarButtonItem) {
+       
         let firebaseAuth = FIRAuth.auth()
         do {
             try firebaseAuth?.signOut()
+            GIDSignIn.sharedInstance().signOut()
         } catch let signOutError as NSError {
         print ("Error signing out: %@", signOutError)
         }
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-    }
-    
+        }
 }
+    
+
 
 protocol transfertotalsdelegate
 {

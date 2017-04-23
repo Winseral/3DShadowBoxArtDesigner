@@ -32,8 +32,10 @@ class MainMenu: UIViewController, GIDSignInUIDelegate{
     @IBAction func GoogleSignInButton(_ sender: GIDSignInButton) {
         self.Spinner.alpha = 0.85
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().signIn()
         self.Spinner.alpha = 0
+        
         self.present(OrderVC, animated: false, completion: nil)
     }
     
