@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class OrderVC: UIViewController, transfertotalsdelegate {
     
@@ -15,6 +17,14 @@ class OrderVC: UIViewController, transfertotalsdelegate {
     var Totalsum = 0.00
     var GrandT = 0.00
     let SpecialNotesColor = UIColor.darkGray
+
+    
+    
+    //FirebaseDatabase reference
+    var dbRef: FIRDatabaseReference!{
+        return FIRDatabase.database().reference()
+    }
+
     
 //OrderVC Outlets
     @IBOutlet var OrderVCView: UIView!
@@ -28,15 +38,21 @@ class OrderVC: UIViewController, transfertotalsdelegate {
     @IBOutlet weak var SumTotal: UILabel!
     @IBOutlet weak var GrandTotal: UILabel!
     @IBOutlet weak var OrderBlur: UIVisualEffectView!
+    @IBOutlet weak var CancelButton: UIBarButtonItem!
     
 //CreditCard Outlets
     @IBOutlet var CreditCardView: UIView!
     @IBOutlet weak var CCardName: UITextField!
     @IBOutlet weak var CCardNo: UITextField!
+    @IBOutlet weak var CCExpiryMonth: UITextField!
+    @IBOutlet weak var CCExpiryYear: UITextField!
+    @IBOutlet weak var CCCVNo: UITextField!
     
     @IBOutlet weak var CCardCVNo: UITextField!
     @IBOutlet weak var DeliveryAddress: UITextField!
     @IBOutlet weak var SpecialNotes: UITextField!
+    @IBOutlet weak var CCConfirmedBtn: UIButton!
+    @IBOutlet weak var CCCancelledBtn: UIButton!
     
     
     func transferingtotals(Canvasphoto: UIImage,sumff: Double, suml: Double, sum3df: Double, sume: Double) {
@@ -105,7 +121,51 @@ class OrderVC: UIViewController, transfertotalsdelegate {
     }
     
     @IBAction func ConfirmedOrderButton(_ sender: UIButton) {
+       if(CCardName.text != "" && CCardNo.text != "" && CCExpiryMonth.text != "" && CCExpiryYear.text != "" && CCCVNo.text != "" && CCardCVNo.text != "" && DeliveryAddress.text != "")
+       {
+        copieddatatofirebase();
+       }else
+       {
+        let alert = UIAlertController(title: "Alert", message: "Error - Credit Card - Name, Number, Month,Year, CV and devliery address can not be nil", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        }
     }
     
-
+    func copieddatatofirebase()
+    {
+        //string save image
+        let Orderimage = CanvasUIImageView.image
+        
+        //Convert SavedOrderimage to Compressed NSData - base64String
+        let data = UIImageJPEGRepresentation(Orderimage!,0.8)!
+        let base64String = data.base64EncodedString(options: NSData.Base64EncodingOptions.init(rawValue: 0))
+        
+        let user = FIRAuth.auth()?.currentUser
+        if let user = user {
+            let uid = user.uid
+            let SaveOrder = dbRef.child("SavedOrders").child(uid).childByAutoId()
+    
+            //send SavedOrder and to this userID Firebase
+            let Ordersaved = SavedOrder(CCardname: CCardName.text!, CCardnumber: CCardNo.text!, CCexpiremonth: CCExpiryMonth.text!, CCexpireyear: CCExpiryYear.text!, CCCVnumber: CCCVNo.text!, Deliveryaddress: DeliveryAddress.text!, Specialnotes: SpecialNotes.text!, Total: GrandT, Image: base64String)
+            
+            SaveOrder.setValue(Ordersaved.toanyobject())
+            //SaveSpinner.alpha = 0
+            
+            let alert = UIAlertController(title: "Order Sent", message: "Your design has been ordered for the amount of \(GrandT) including delivery the order will delivered in three weeks from confirmation of payment to the specified delivery address", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: { 
+                self.CreditCardCancelBtn(self.CCConfirmedBtn)
+                self.present(self.DesignVC, animated: true, completion: nil)
+            })
+        }else
+        {
+            let alert = UIAlertController(title: "Alert", message: "Error - could not save your order at present", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+        }
+        
+    }
 }

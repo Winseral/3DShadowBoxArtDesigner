@@ -14,6 +14,7 @@
 		8113A45E1E94E96700CD5D20 /* Flat_LargeButterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A45B1E94E96700CD5D20 /* Flat_LargeButterfly.png */; };
 		8113A4621E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4611E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png */; };
 		8113A4641E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8113A4631E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png */; };
+		8118A88F1EAF2F3000423102 /* SavedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118A88E1EAF2F3000423102 /* SavedOrder.swift */; };
 		812F58E61E98746600AECB34 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = 812F58E31E98746600AECB34 /* google.png */; };
 		812F58E71E98746600AECB34 /* google@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 812F58E41E98746600AECB34 /* google@2x.png */; };
 		812F58E81E98746600AECB34 /* google@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 812F58E51E98746600AECB34 /* google@3x.png */; };
@@ -84,6 +85,7 @@
 		8113A45B1E94E96700CD5D20 /* Flat_LargeButterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_LargeButterfly.png; sourceTree = "<group>"; };
 		8113A4611E94EE3200CD5D20 /* Flat_ThreeLayer_Small_Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_ThreeLayer_Small_Flower.png; sourceTree = "<group>"; };
 		8113A4631E94EEC300CD5D20 /* Flat_SingleLeaf_CentreCutout_Leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flat_SingleLeaf_CentreCutout_Leaf.png; sourceTree = "<group>"; };
+		8118A88E1EAF2F3000423102 /* SavedOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedOrder.swift; sourceTree = "<group>"; };
 		812F58E31E98746600AECB34 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
 		812F58E41E98746600AECB34 /* google@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google@2x.png"; sourceTree = "<group>"; };
 		812F58E51E98746600AECB34 /* google@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google@3x.png"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				81AE39201E8E2A2D001508AE /* Info.plist */,
 				8170ABC81E8F36C500A84E9F /* ShadowBoxArtDesigner-Bridging-Header.h */,
 				81FBA6C71EA73D490067DFA9 /* SavedCanvas.swift */,
+				8118A88E1EAF2F3000423102 /* SavedOrder.swift */,
 			);
 			path = ShadowBoxArtDesigner;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				817C786C1E9F50CF0058BE3D /* OrderVC.swift in Sources */,
 				817BA5011E92115600924099 /* AKPickerView.swift in Sources */,
 				81AE39151E8E2A2D001508AE /* AppDelegate.swift in Sources */,
+				8118A88F1EAF2F3000423102 /* SavedOrder.swift in Sources */,
 				81FBA6C81EA73D490067DFA9 /* SavedCanvas.swift in Sources */,
 				815C31901E90504100DFD769 /* CreateAccount.swift in Sources */,
 				81A092B41E8E2FAC00773220 /* 3DSBADesignerViewC.swift in Sources */,

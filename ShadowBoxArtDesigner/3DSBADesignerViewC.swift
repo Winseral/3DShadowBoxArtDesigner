@@ -94,6 +94,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
     //Canvas Colour Picker
     @IBOutlet var CanvasColourPickerView: UIView!
     @IBOutlet weak var CanvasCPicker: UIPickerView!
+    @IBOutlet weak var CanvasColourCancelButton: UIButton!
     
     //Gesture outlets
     @IBOutlet var DoubleTap: UITapGestureRecognizer!
@@ -152,8 +153,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
         valueSelected = item
     }
     
-//Picker for Canvas Colour 
-    
+//Picker for Canvas Colour
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -339,7 +339,7 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
                 {self.sumExtras += loadedextrassum!}
         })
     }
-
+//Canvas Colour Menu
     @IBAction func CanvasColourBtn(_ sender: UIButton) {
         //turn off Canvas menu
         self.CanvasMenuDoneBtn(self.CanvasColourButton)
@@ -355,8 +355,18 @@ class _DSBADesignerViewC: UIViewController, AKPickerViewDataSource, AKPickerView
                 self.CanvasColourPickerView.alpha = 1
                 self.CanvasColourPickerView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
         })
-
     }
+    
+    @IBAction func CanvasColourCancelBtn(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3, delay: 0.05, animations: {self.CanvasColourPickerView.alpha = 0
+            self.CanvasColourPickerView.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)})
+        { (AniFinished) in
+                if(AniFinished){self.CanvasColourPickerView.removeFromSuperview()}
+        }
+        //load canvas menu
+        self.CanvasMenuBtn(self.CanvasColourCancelButton)
+    }
+
     
 //Canvas Menu and Buttons
     @IBAction func CanvasMenuBtn(_ sender: UIButton) {
