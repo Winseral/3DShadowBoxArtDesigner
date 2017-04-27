@@ -15,7 +15,7 @@
 # Plugins - References
 
 ## AKPicker
-[Akkyie AKPickerview](https://github.com/Akkyie/AKPickerView)
+[GitHub - Akkyie AKPickerview](https://github.com/Akkyie/AKPickerView)
 
 ## CoCoaPods
 [Documentation](https://cocoapods.org/)
@@ -29,10 +29,7 @@
 ## iOS
 [xamarin ios10 references](https://cloud.githubusercontent.com/assets/12288812/18732199/abed958c-80a4-11e6-9051-1f79953b4bc7.PNG)
 
-
+======================
 # Licenses
-===============
-
 ## [iOS 10 Development and Distribution](https://developer.apple.com/macos/distribution/)
 
-===============
