@@ -5,6 +5,8 @@
 # [Deakin](http://www.deakin.edu.au/) IT Degree SIT206 Tri1 2017 iOS Programming 
 
 ## Swift 3.0 - iOS10 Art Designer Software system
+### This apple application allows users to develop 3D Box Art and 
+### place an order for others to build and deliver
 -----------------
 ### iOS 10 Supported
 ### [Download the code from GitHub](https://github.com/Winseral/3DShadowBoxArtDesigner)
@@ -23,7 +25,7 @@
 ## iOS
 [iOS10 references material](https://cloud.githubusercontent.com/assets/12288812/18732199/abed958c-80a4-11e6-9051-1f79953b4bc7.PNG)
 
-======================
+--------------------
 # Licenses
 ## [iOS 10 Development and Distribution](https://developer.apple.com/macos/distribution/)
 
